@@ -3,28 +3,34 @@ package pages;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 public class EvaluationStartPage {
 
-    private static final By ONLINE_EVALUATE_BTN = byText("Оцените онлайн");
-    private static final By LICENSE_PLATE_INPUT = byXpath("//tr-car-identifier-input//input");
+    private static final By ONLINE_EVALUATE_BUTTON = byXpath(
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-choice-evaluation/div/div/div/div[1]/div/div[3]/button");
+    private static final By LICENSE_PLATE_INPUT = byXpath(
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-steps-form/div[2]/form/div/tr-choice-type/div/tr-accordion-wrapper/div/div/div/tr-car-identifier-input/tr-control/div[2]/input");
     private static final By IDENTIFIER_NEXT_BUTTON = byXpath(
-            "//tr-choice-type//button[.//span[contains(normalize-space(.), 'Продолжить')] or contains(normalize-space(.), 'Продолжить')]");
-    private static final By MILEAGE_OPTION_BUTTON = byXpath("//tr-online-evaluation-choice-run//button");
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-steps-form/div[2]/form/div/tr-choice-type/div/button");
+    private static final By MILEAGE_OPTION_BUTTON = byXpath(
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-steps-form/div[2]/form/div/tr-online-evaluation-choice-run/div/tr-online-evaluation-accordion-slider-step/button/span[2]");
     private static final By MILEAGE_NEXT_BUTTON = byXpath(
-            "//tr-online-evaluation-steps-form//form/button[.//span[contains(normalize-space(.), 'Продолжить')] or contains(normalize-space(.), 'Продолжить')]");
-    private static final By PRICE_SELECT_BUTTON = byXpath("//tr-online-evaluation-prices//form/button");
-    private static final By PHONE_INPUT = byXpath("//tr-input-phone//input");
-    private static final By NAME_INPUT = byXpath("//tr-result-form-fields//tr-control[2]//input");
-    private static final By AGREEMENT_CHECKBOX = byXpath("//tr-agreement-block//tr-checkbox//label");
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-steps-form/div[2]/form/button/span[2]");
+    private static final By PRICE_SELECT_BUTTON = byXpath(
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-prices/div[2]/div/div/div[2]/div[5]/form/button/span[2]");
+    private static final By PHONE_INPUT = byXpath(
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-result-form/div[2]/div/div/div[1]/form/tr-result-form-fields/div[1]/tr-control/div[2]/tr-input-phone/input");
+    private static final By NAME_INPUT = byXpath(
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-result-form/div[2]/div/div/div[1]/form/tr-result-form-fields/div[2]/tr-control/div[2]/input");
+    private static final By AGREEMENT_CHECKBOX = byXpath(
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-result-form/div[2]/div/div/div[1]/form/tr-agreement-block/tr-legal-block[1]/div/div/tr-checkbox/label");
     private static final By SUBMIT_BUTTON = byXpath(
-            "//tr-online-evaluation-result-form//button[.//span[contains(normalize-space(.), 'Отправить')] or contains(normalize-space(.), 'Отправить')]");
+            "/html/body/tr-modal-window/div/div/tr-modal-outlet/tr-scroll/div/ng-component/tr-online-evaluation-start-page/tr-online-evaluation-result-form/div[2]/div/div/div[1]/form/div/button/span[2]");
 
     public EvaluationStartPage clickEvaluateOnline() {
-        $(ONLINE_EVALUATE_BTN).shouldBe(visible).click();
+        $(ONLINE_EVALUATE_BUTTON).shouldBe(visible).click();
         return this;
     }
 
